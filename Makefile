@@ -12,7 +12,7 @@ pip-tools:
 	pip-compile requirements/prod.in && pip-compile requirements/dev.in
 	
 	# install requirements for dev
-	# python -m piptools sync requirements/prod.txt requirements/dev.txt
+	python -m piptools sync requirements/prod.txt requirements/dev.txt
 	# pip install -r requirements/prod.txt && pip install -r requirements/dev.txt
 	# install requirements for prod
 	# pip-sync
