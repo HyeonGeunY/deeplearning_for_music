@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+torch = "==1.7.1"
+torchvision = "==0.8.2"
+torchaudio = "==0.7.2"
+jupyter = "*"
+ipykernel = "*"
+tqdm = "*"
+pandas = "*"
+datetime = "*"
+matplotlib = "*"
+gdown = "*"
+git-lfs = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
