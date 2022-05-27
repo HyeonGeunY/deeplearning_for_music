@@ -630,7 +630,9 @@ def convert_pitch_dur_to_note_representation(pitch_dur: torch.LongTensor):
     
     """
 
-    start_timestep = torch.cumsum(pitch_dur[:, -1], dim=0).unsqueeze(-1)
+    start_timestep = torch.cat(
+        (torch.tensor([0]), torch.cumsum(pitch_dur[:-1, 1], dim=0))
+    ).unsqueeze(-1)
     velocity = torch.tensor([64] * len(pitch_dur)).unsqueeze(-1)
     note_repr = torch.cat((start_timestep, pitch_dur, velocity), dim=1)
 
